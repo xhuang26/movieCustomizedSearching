@@ -1,0 +1,22 @@
+<p>
+    <a ng-click="goback()">Back to List</a>
+</p>
+<button ng-click="preMovie()">prev</button>
+<button ng-click="nextMovie()">next</button>
+<div class="row">
+    <div class="column small-12">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <button>{{selected.title}}</button>
+            </h3>
+        </div>
+        <div class="panel-body">
+            Rank: {{selected.rank}} <br>
+            Language: {{selected.language[0]}} <br>
+            awards: {{selected.awards}}
+        </div> 
+        <div>
+            <img ng-src= "{{getSrc(selected.imdbID)}}" />
+        </div>
+    </div>
+</div>

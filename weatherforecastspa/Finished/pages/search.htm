@@ -1,0 +1,25 @@
+<p>
+    <a href="#/">Back to Search</a>
+</p>
+
+Search for {{movie}}
+ <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort By
+      <b class="caret"></b></button>
+      <ul class="dropdown-menu">
+        <li><a href="#/search/{{items}}/d"  ng-class="{'bg-primary': sort === 'd'}">Rank Descending</a></li>
+        <li><a href="#/search/{{items}}/a"  ng-class="{'bg-primary': sort === 'a'}">Rank Ascending</a></li>
+        <li><a href="#/search/{{items}}/n"  ng-class="{'bg-primary': sort === 'n'}">Name</a></li>
+      </ul>
+</div>   
+<hr />
+items <a ng-href="#/search/20/{{sort}}" ng-class="{'bg-primary': items === '20'}">20</a> | <a ng-href="#/search/50/{{sort}}" ng-class="{'bg-primary': items === '50'}">50</a> | <a ng-href="#/search/100/{{sort}}" ng-class="{'bg-primary': items === '100'}">100</a>
+
+<hr />
+<div ng-repeat = "m in resultList">
+    <div class="row">
+        <div class="col-md-12">
+            <movie-result movie-data="m" after-selected="afterSelected(data)"></movie-result>
+        </div>
+    </div>
+</div>

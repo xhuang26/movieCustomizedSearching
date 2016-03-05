@@ -1,0 +1,35 @@
+<div id="title" class="row">
+    GALLERY
+</div>
+<div class="row">
+    <ul class="dropdown menu" data-dropdown-menu>
+        <li>
+            <a>Ranking By</a>
+            <ul class="menu">
+              <li><a href="#/gallery/Drama">Drama</a></li>
+              <li><a href="#/gallery/Crime">Crime</a></li>
+              <li><a href="#/gallery/Action">Action</a></li>
+            </ul>
+        </li>
+    </ul>
+    <a class="secondary button" href="#/">Back to search</a>
+</div>
+<div ng-repeat="m in resultList">
+    <div class="row" ng-click ="afterSelected(m)">
+        <div class="column small-12">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <button>{{m.title}}</button>
+                </h3>
+            </div>
+            <div class="panel-body">
+                Rank: {{m.rank}} <br>
+                Language: {{m.language[0]}} <br>
+                awards: {{m.awards}}
+            </div> 
+            <div>
+                <img ng-src= "{{getSrc(m.imdbID)}}" />
+            </div>
+        </div>
+    </div>
+</div>

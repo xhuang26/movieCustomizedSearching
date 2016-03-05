@@ -1,0 +1,9 @@
+//custom directive
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ converttodate({time: weather.dt}) | date: format }}</h3>
+    </div>
+    <div class="panel-body">
+        Daytime tomperature: {{ converttof({temp: weather.temp.day}) }}
+    </div>        
+</div>

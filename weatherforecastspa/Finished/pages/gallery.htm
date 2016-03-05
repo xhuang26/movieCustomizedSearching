@@ -1,0 +1,29 @@
+<p>
+    <a href="#/">Back to Search</a>
+</p>
+
+Top 250 Movies
+ <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Genre
+      <b class="caret"></b></button>
+      <ul class="dropdown-menu">
+        <li><a href="#/search/{{items}}/d"  ng-class="{'bg-primary': sort === 'd'}">Action</a></li>
+        <li><a href="#/search/{{items}}/a"  ng-class="{'bg-primary': sort === 'a'}">Crime</a></li>
+        <li><a href="#/search/{{items}}/n"  ng-class="{'bg-primary': sort === 'n'}">Drama</a></li>
+        <li><a href="#/search/{{items}}/n"  ng-class="{'bg-primary': sort === 'n'}">Thriller</a></li>
+          <li><a href="#/search/{{items}}/n"  ng-class="{'bg-primary': sort === 'n'}">Biography</a></li>
+          <li><a href="#/search/{{items}}/n"  ng-class="{'bg-primary': sort === 'n'}">History</a></li>
+          <li><a href="#/search/{{items}}/n"  ng-class="{'bg-primary': sort === 'n'}">Western</a></li>
+          <li><a href="#/search/{{items}}/n"  ng-class="{'bg-primary': sort === 'n'}">Adventure</a></li>
+          <li><a href="#/search/{{items}}/n"  ng-class="{'bg-primary': sort === 'n'}">Fantasy</a></li>
+          <li><a href="#/search/{{items}}/n"  ng-class="{'bg-primary': sort === 'n'}">Sci-Fi</a></li>
+          <li><a href="#/search/{{items}}/n"  ng-class="{'bg-primary': sort === 'n'}">Mistery</a></li>
+          <li><a href="#/search/{{items}}/n"  ng-class="{'bg-primary': sort === 'n'}">War</a></li>
+          <li><a href="#/search/{{items}}/n"  ng-class="{'bg-primary': sort === 'n'}">Family</a></li>
+          <li><a href="#/search/{{items}}/n"  ng-class="{'bg-primary': sort === 'n'}">Horror</a></li>
+      </ul>
+</div>   
+
+<div ng-repeat="m in movieList">
+    {{m.title}}
+</div>
