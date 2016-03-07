@@ -1,40 +1,55 @@
+
 <div class="row">
-        <div class="column small-6 small-offset-3">
+        <div class="column small-8 small-offset-2">
             <h4>Movie List</h4>
             <label>
                 <input type="text" ng-model="movie">
             </label>
         </div>
+        <div class="column small-10 small-offset-2">
+            <a class="secondary button" href="#/gallery">Gallery</a>
+        </div>
 </div>
 <div class="row">
-    <ul class="dropdown menu" data-dropdown-menu>
-        <li>
-            <a>Ranking By</a>
-            <ul class="menu">
-              <li><a href="#/d">Descending Order</a></li>
-              <li><a href="#/a">Ascending Order</a></li>
-              <li><a href="#/n">Name</a></li>
-            </ul>
-        </li>
-    </ul>
-    <a class="secondary button" href="#/gallery">Gallery</a>
-</div>
-<div ng-repeat="m in resultList">
-    <div class="row" ng-click ="afterSelected(m)">
-        <div class="column small-12">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                    <button>{{m.title}}</button>
-                </h3>
-            </div>
-            <div class="panel-body">
-                Rank: {{m.rank}} <br>
-                Language: {{m.language[0]}} <br>
-                awards: {{m.awards}}
-            </div> 
-            <div>
-                <img ng-src= "{{getSrc(m.imdbID)}}" />
-            </div>
-        </div>
+    <div class="column small-5 small-offset-2">
+        <ul id="order" class="dropdown menu" data-dropdown-menu>
+            <li>
+                <ul class="has-submenu">
+                  <a>Listing By</a>
+                  <li><a href="#/r/{{order}}">Rank</a></li>
+
+                  <li><a href="#/n/{{order}}">Name</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
+    <div class="column small-5">
+        <ul id="order" class="dropdown menu" data-dropdown-menu>
+            <li>
+                <ul class="has-submenu">
+                  <a>Order</a>
+                  <li><a href="#/{{sort}}/d">Descending Order</a></li>
+                  <li><a href="#/{{sort}}/a">Ascending Order</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+</div>
+<div class="row" ng-click ="afterSelected(m)">
+    <div  style="height: 800px;" ng-repeat="m in resultList" class="column small-10  small-offset-2 large-3 large-offset-2">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <button>{{m.title}}</button>
+            </h3>
+        </div>
+        <div class="panel-body">
+            Rank: {{m.rank}} <br>
+            Language: {{m.language[0]}} <br>
+            awards: {{m.awards}}
+        </div> 
+        <div>
+            <img style="width: 300px; height: 400px;" ng-src= "{{getSrc(m.imdbID)}}" />
+        </div>
+     </div>
 </div>

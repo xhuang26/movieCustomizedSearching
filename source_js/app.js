@@ -10,18 +10,19 @@ app.config(function ($routeProvider) {
         templateUrl: "partials/gallery.html",
         controller: "galleryController"
     })
-    .when('/details/:title',{
-          templateUrl: "partials/details.html",
-          controller: "detailsController"
-    })
-    .when('/:sort', {
-        templateUrl: "partials/list.html",
-        controller: "homeController"
-    })
     .when('/gallery/:genre',{
         templateUrl: "partials/gallery.html",
         controller: "galleryController"
     })
+    .when('/details/:title',{
+          templateUrl: "partials/details.html",
+          controller: "detailsController"
+    })
+    .when('/:sort/:order', {
+        templateUrl: "partials/list.html",
+        controller: "homeController"
+    })
+    
     .otherwise({
             redirectTo: '/'
     });

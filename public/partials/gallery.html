@@ -1,35 +1,40 @@
 <div id="title" class="row">
-    GALLERY
+    <div class="column text-center small-12">
+        <h1>GALLERY</h1>
+    </div>
 </div>
 <div class="row">
-    <ul class="dropdown menu" data-dropdown-menu>
-        <li>
-            <a>Ranking By</a>
-            <ul class="menu">
-              <li><a href="#/gallery/Drama">Drama</a></li>
-              <li><a href="#/gallery/Crime">Crime</a></li>
-              <li><a href="#/gallery/Action">Action</a></li>
-            </ul>
-        </li>
-    </ul>
-    <a class="secondary button" href="#/">Back to search</a>
+   <div class="column small-offset-1">
+        <h6>Sorting By</h6>
+   </div>
+    <div style="height: 200px;" class="column small-offset-1 small-10">       
+        <div class="column small-3 large-2"ng-repeat="gen in genreList">
+          <a ng-href="#/gallery/{{gen}}">{{gen}}</a>
+         </div>        
+    </div>
+    <div  class="colun small-offset-8 small-4">
+    <a  class="secondary button" href="#/">Back to search</a>
+    </div>
 </div>
-<div ng-repeat="m in resultList">
-    <div class="row" ng-click ="afterSelected(m)">
-        <div class="column small-12">
-            <div class="panel-heading">
+<div class="row" >
+    <div style="height: 800px;" ng-repeat="m in resultList" class="column large-4 small-12">
+            <div class="panel-heading" ng-click ="afterSelected(m)">
                 <h3 class="panel-title">
                     <button>{{m.title}}</button>
                 </h3>
             </div>
             <div class="panel-body">
                 Rank: {{m.rank}} <br>
-                Language: {{m.language[0]}} <br>
-                awards: {{m.awards}}
+                Plot: {{m.plot}} <br>
+                Awards: {{m.awards}} <br>
+                Language: {{convert(m.language)}}
             </div> 
             <div>
-                <img ng-src= "{{getSrc(m.imdbID)}}" />
+                <img style="width: 300px; height: 400px;" ng-src= "{{getSrc(m.imdbID)}}" />
             </div>
-        </div>
     </div>
 </div>
+
+<script>
+  var elem = new Foundation.DropdownMenu($('#myDropdown'));
+</script>
