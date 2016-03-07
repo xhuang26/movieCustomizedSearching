@@ -190,10 +190,13 @@ app.controller("homeController", ['$scope', '$http', '$filter', '$routeParams', 
         return realSrc;
     }
     $scope.afterSelected = function(movieSelected){
+        console.log("got here");
+        
         $scope.selected = movieSelected;
+        console.log($scope.selected);
         selectedService.movielist = $scope.resultList;
         selectedService.selected = $scope.selected;
-        var path = "details/" + movieSelected.title;
+        var path = "details/" + $scope.selected.title;
         console.log("path: " + path);
         $location.path(path);
     }
