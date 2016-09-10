@@ -1,6 +1,6 @@
-# Starter files for MP3
+# Movie Gallery with Multi-principle Searching
+This projects supports multi-principle Searching such as by rank, by name order by year. It also suports different filters to categorize search result by genre
 
-## Setup
 Use the following commands in your vagrant development environment to get this up and running
 ```bash
 git clone --bare https://github.com/uiuc-web-programming/mp3_starter.git
